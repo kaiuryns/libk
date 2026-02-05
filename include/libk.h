@@ -3,6 +3,11 @@
 
 #include <stddef.h>
 
+typedef struct s_list {
+  void *content;
+  struct s_list *next;
+} t_list;
+
 int k_atoi(const char *nptr);
 void k_bzero(void *s, size_t n);
 void *k_calloc(size_t count, size_t size);
@@ -11,6 +16,7 @@ int k_isalpha(int c);
 int k_isdigit(int c);
 int k_isspace(int c);
 char *k_itoa(int n);
+
 int k_strcmp(const char *s1, const char *s2);
 char *k_strcat(char *dest, const char *src);
 char *k_strchr(const char *s, int c);
@@ -31,6 +37,16 @@ char *k_strstr(const char *haystack, const char *needle);
 char *k_strtrim(const char *s1, const char *set);
 char **k_split(const char *s, char c);
 char *k_substr(const char *s, unsigned int start, size_t len);
+
+void k_lstadd_back(t_list **lst, t_list *new);
+void k_lstadd_front(t_list **lst, t_list *new);
+void k_lstclear(t_list **lst, void (*del)(void *));
+void k_lstdelone(t_list *lst, void (*del)(void *));
+void k_lstiter(t_list *lst, void (*f)(void *));
+t_list *k_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
+t_list *k_lstlast(t_list *lst);
+t_list *k_lstnew(void *content);
+int k_lstsize(t_list *lst);
 
 void *k_memchr(const void *s, int c, size_t n);
 int k_memcmp(const void *s1, const void *s2, size_t n);
