@@ -55,7 +55,9 @@ void *k_memmove(void *dst, const void *src, size_t n);
 void *k_memset(void *s, int c, size_t n);
 
 void k_putchar(char c);
+void k_putchar_fd(char c, int fd);
 void k_putstr(const char *s);
+void k_putstr_fd(const char *s, int fd);
 
 int k_tolower(int c);
 int k_toupper(int c);
