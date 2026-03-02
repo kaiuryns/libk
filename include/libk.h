@@ -56,6 +56,10 @@ void *k_memset(void *s, int c, size_t n);
 
 void k_putchar(char c);
 void k_putchar_fd(char c, int fd);
+void k_putendl(const char *s);
+void k_putendl_fd(const char *s, int fd);
+void k_putnbr(int n);
+void k_putnbr_fd(int n, int fd);
 void k_putstr(const char *s);
 void k_putstr_fd(const char *s, int fd);
 
